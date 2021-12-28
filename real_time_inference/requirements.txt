@@ -1,0 +1,11 @@
+streamlit==1.2.0
+numpy==1.21.4
+torch==1.10.0
+scipy==1.7.3
+tqdm==4.62.3
+opencv-python==4.5.4.60
+Pillow==8.4.0
+torchvision==0.11.1
+matplotlib==3.5.0
+PyYAML==6.0
+google-cloud-storage
