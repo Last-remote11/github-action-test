@@ -23,16 +23,11 @@ from utils.prototype import drawBoxes, lookup_checkpoint_files, np_to_tensor
 # 서비스 사용자한테는 프로토타입에 있었던 체크포인트, confidence threshold, 결과 해상도 지원 X
 # 대신 사이드바에 위법 사진, 위법 내용, 시간을 표시할 예정
 
-client = storage.Client()
-bucket = client.get_bucket('sungdong-final')
-blob = bucket.get_blob('park_best_ap50.pt')
-pt_file = blob.download_as_bytes()
-pt_file = pickle.load(pt_file)
-print(type(pt_file))
+
 
 device = select_device('')
 # 체크포인트 선택!
-model = attempt_load(pt_file, map_location=device)
+model = attempt_load('park_best_ap50.pt', map_location=device)
 KST = pytz.timezone('Asia/Seoul')
 
 
